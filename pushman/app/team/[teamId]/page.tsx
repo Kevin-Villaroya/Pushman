@@ -19,7 +19,7 @@ const TeamPage = ({ params }: { params: { teamId: string } }) => {
 
 
     useEffect(() => {
-        fetch('/api/retrieve/teams/'+ teamId)
+        fetch('/api/retrieve/team/'+ teamId)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)

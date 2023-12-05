@@ -21,7 +21,7 @@ export default function LoginPage() {
         if(result.error) {
             alert("Error signing in");
             return;
-        }
+        }   
 
         router.push("/dashboard");
     };

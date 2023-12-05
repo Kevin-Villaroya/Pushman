@@ -7,7 +7,7 @@ import { Rights } from '@prisma/client'
 const prisma = new PrismaClient();
 
 export async function POST(req) {
-    let { name, avatar } = await req.json();
+    let { name, image } = await req.json();
 
     const userSession = await getServerSession(req);
     let email = userSession.user.email;
@@ -16,8 +16,8 @@ export async function POST(req) {
         return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
     }
 
-    if(!avatar) {
-        avatar = "https://www.svgrepo.com/show/419754/business-group-human.svg";
+    if (!image) {
+        image = "https://www.svgrepo.com/show/419754/business-group-human.svg";
     }
 
     const userDatabase = await prisma.user.findUnique({
@@ -42,7 +42,7 @@ export async function POST(req) {
     const teamCreated = await prisma.team.create({
         data: {
             name,
-            image: avatar,
+            image: image,
             ownerId: userDatabase.id,
         }
     });

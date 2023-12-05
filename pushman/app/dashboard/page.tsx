@@ -104,8 +104,6 @@ const DashboardPage = () => {
                     {/* Teams Information */}
                     <div className="flex flex-col bg-zinc-700 rounded-md shadow-m col-span-1 m-1 w-full items-center text-center h-full content-center justify-center">
                         <h2 className="text-xl font-bold mb-4">Teams Information</h2>
-                        {teams.length>0 ? 
-                        (
                             <div className="flex-1-0 flex flex-row items-center text-center justify-center">
                                 {teams.map((team) => (
                                     <a href={`/team/${team.id}`} key={team.id}>
@@ -123,18 +121,15 @@ const DashboardPage = () => {
                                         </div>
                                     </a>
                                 ))}
+                                <a href="/register/team" className="rounded-md m-1">
+                                    <button
+                                        type="submit"
+                                        className="m-1 w-3/5 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-base font-semibold leading-6 text-white shadow-sm hover:bg-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
+                                    >
+                                        Create a team
+                                    </button>
+                                </a>
                             </div>
-                        ) : 
-                        (
-                            <a href="/register/team">
-                                <button
-                                    type="submit"
-                                    className="m-1 w-3/5 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-base font-semibold leading-6 text-white shadow-sm hover:bg-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
-                                >
-                                    Create a team
-                                </button>
-                            </a>
-                        )}
                     </div>
                 </div>
             </div>

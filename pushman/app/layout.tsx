@@ -6,6 +6,7 @@ import './globals.css'
 
 import Provider from './provider'
 import { getServerSession } from 'next-auth'
+import { env } from 'process'
 
 export const metadata: Metadata = {
   title: 'Pushman',

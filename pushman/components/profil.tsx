@@ -17,7 +17,7 @@ if (session.status == "authenticated")
                 <div className="ml-4 flex-col">
                     <p className="font-bold text-xl">{session.data.user.name}</p>
                     <a href="/dashboard" className="text-blue-500 flex">Profile</a>
-                    <a onClick={() => { signOut() }} className="text-blue-500 flex">Disconnect</a>
+                    <a onClick={() => { signOut() }} className="text-blue-500 flex hover:cursor-pointer">Disconnect</a>
                 </div>
             </div>
         );
